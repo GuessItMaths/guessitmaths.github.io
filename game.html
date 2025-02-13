@@ -30,19 +30,31 @@
   </div>
 
   <script>
-    const selectedTopic = localStorage.getItem("selectedTopic");
-    // This is a sample list of profiles. You can add more as needed.
-    const profiles = [
-      { id: 1, image: "profile1.jpg" },
-      { id: 2, image: "profile2.jpg" },
-      { id: 3, image: "profile3.jpg" },
-      { id: 4, image: "profile4.jpg" },
-      { id: 5, image: "profile5.jpg" },
-      { id: 6, image: "profile6.jpg" },
-      { id: 7, image: "profile7.jpg" },
-      { id: 8, image: "profile8.jpg" }
-      // ... add up to 24 profiles if needed
-    ];
+    const topicsData = {
+  topic1: [
+    { id: 1, image: 'topic1/profile1.jpg' },
+    { id: 2, image: 'topic1/profile2.jpg' },
+    { id: 3, image: 'topic1/profile3.jpg' },
+    // ... add more topic1 profiles
+  ],
+  topic2: [
+    { id: 1, image: 'topic2/profile1.jpg' },
+    { id: 2, image: 'topic2/profile2.jpg' },
+    { id: 3, image: 'topic2/profile3.jpg' },
+    // ... add more topic2 profiles
+  ],
+  topic3: [
+    { id: 1, image: 'topic3/profile1.jpg' },
+    { id: 2, image: 'topic3/profile2.jpg' },
+    { id: 3, image: 'topic3/profile3.jpg' },
+    // ... add more topic3 profiles
+  ]
+};
+
+    const selectedTopic = localStorage.getItem("selectedTopic") || "topic1";
+    const profiles = topicsData[selectedTopic] || [];
+
+
 
     function createProfileCard(profile) {
       const card = document.createElement("div");
