@@ -4,16 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Guess Who - Game</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts for a modern look -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container game-page">
     <header>
-      <h1>Guess Who - Game</h1>
-      <p>Click a profile card to turn it face down. Can you work out which is being thought of?</p>
+      <!-- The topic title will be set dynamically -->
+      <h1 id="topicTitle">Topic Name</h1>
+      <p>Click a profile card to reveal it. Can you deduce the mystery one?</p>
     </header>
     <div class="game-board" id="gameBoard">
       <!-- Profile cards will be generated here -->
@@ -30,144 +32,77 @@
   </div>
 
   <script>
-    
-    const topicsData = {
-  topic1: [
-    { id: 1, image: 'topic1/profile1.jpg' },
-    { id: 2, image: 'topic1/profile2.jpg' },
-    { id: 3, image: 'topic1/profile3.jpg' },
-    { id: 4, image: 'topic1/profile4.jpg' },
-    { id: 5, image: 'topic1/profile5.jpg' },
-    { id: 6, image: 'topic1/profile6.jpg' },
-    { id: 7, image: 'topic1/profile7.jpg' },
-    { id: 8, image: 'topic1/profile8.jpg' },
-    { id: 9, image: 'topic1/profile9.jpg' },
-    { id: 10, image: 'topic1/profile10.jpg' },
-    { id: 11, image: 'topic1/profile11.jpg' },
-    { id: 12, image: 'topic1/profile12.jpg' },
-    { id: 13, image: 'topic1/profile13.jpg' },
-    { id: 14, image: 'topic1/profile14.jpg' },
-    { id: 15, image: 'topic1/profile15.jpg' },
-    { id: 16, image: 'topic1/profile16.jpg' },
-    { id: 17, image: 'topic1/profile17.jpg' },
-    { id: 18, image: 'topic1/profile18.jpg' },
-  ],
-  topic2: [
-    { id: 1, image: 'topic2/profile1.jpg' },
-    { id: 2, image: 'topic2/profile2.jpg' },
-    { id: 3, image: 'topic2/profile3.jpg' },
-    { id: 4, image: 'topic2/profile4.jpg' },
-    { id: 5, image: 'topic2/profile5.jpg' },
-    { id: 6, image: 'topic2/profile6.jpg' },
-    { id: 7, image: 'topic2/profile7.jpg' },
-    { id: 8, image: 'topic2/profile8.jpg' },
-    { id: 9, image: 'topic2/profile9.jpg' },
-    { id: 10, image: 'topic2/profile10.jpg' },
-    { id: 11, image: 'topic2/profile11.jpg' },
-    { id: 12, image: 'topic2/profile12.jpg' },
-    { id: 13, image: 'topic2/profile13.jpg' },
-    { id: 14, image: 'topic2/profile14.jpg' },
-    { id: 15, image: 'topic2/profile15.jpg' },
-    { id: 16, image: 'topic2/profile16.jpg' },
-    { id: 17, image: 'topic2/profile17.jpg' },
-    { id: 18, image: 'topic2/profile18.jpg' },
-  ],
-  topic3: [
-    { id: 1, image: 'topic3/profile1.jpg' },
-    { id: 2, image: 'topic3/profile2.jpg' },
-    { id: 3, image: 'topic3/profile3.jpg' },
-    { id: 4, image: 'topic3/profile4.jpg' },
-    { id: 5, image: 'topic3/profile5.jpg' },
-    { id: 6, image: 'topic3/profile6.jpg' },
-    { id: 7, image: 'topic3/profile7.jpg' },
-    { id: 8, image: 'topic3/profile8.jpg' },
-    { id: 9, image: 'topic3/profile9.jpg' },
-    { id: 10, image: 'topic3/profile10.jpg' },
-    { id: 11, image: 'topic3/profile11.jpg' },
-    { id: 12, image: 'topic3/profile12.jpg' },
-    { id: 13, image: 'topic3/profile13.jpg' },
-    { id: 14, image: 'topic3/profile14.jpg' },
-    { id: 15, image: 'topic3/profile15.jpg' },
-    { id: 16, image: 'topic3/profile16.jpg' },
-    { id: 17, image: 'topic3/profile17.jpg' },
-    { id: 18, image: 'topic3/profile18.jpg' },
-  ],
-  topic4: [
-    { id: 1, image: 'topic4/profile1.jpg' },
-    { id: 2, image: 'topic4/profile2.jpg' },
-    { id: 3, image: 'topic4/profile3.jpg' },
-    { id: 4, image: 'topic4/profile4.jpg' },
-    { id: 5, image: 'topic4/profile5.jpg' },
-    { id: 6, image: 'topic4/profile6.jpg' },
-    { id: 7, image: 'topic4/profile7.jpg' },
-    { id: 8, image: 'topic4/profile8.jpg' },
-    { id: 9, image: 'topic4/profile9.jpg' },
-    { id: 10, image: 'topic4/profile10.jpg' },
-    { id: 11, image: 'topic4/profile11.jpg' },
-    { id: 12, image: 'topic4/profile12.jpg' },
-    { id: 13, image: 'topic4/profile13.jpg' },
-    { id: 14, image: 'topic4/profile14.jpg' },
-    { id: 15, image: 'topic4/profile15.jpg' },
-    { id: 16, image: 'topic4/profile16.jpg' },
-    { id: 17, image: 'topic4/profile17.jpg' },
-    { id: 18, image: 'topic4/profile18.jpg' },
-  ],
-  topic5: [
-    { id: 1, image: 'topic5/profile1.jpg' },
-    { id: 2, image: 'topic5/profile2.jpg' },
-    { id: 3, image: 'topic5/profile3.jpg' },
-    { id: 4, image: 'topic5/profile4.jpg' },
-    { id: 5, image: 'topic5/profile5.jpg' },
-    { id: 6, image: 'topic5/profile6.jpg' },
-    { id: 7, image: 'topic5/profile7.jpg' },
-    { id: 8, image: 'topic5/profile8.jpg' },
-    { id: 9, image: 'topic5/profile9.jpg' },
-    { id: 10, image: 'topic5/profile10.jpg' },
-    { id: 11, image: 'topic5/profile11.jpg' },
-    { id: 12, image: 'topic5/profile12.jpg' },
-    { id: 13, image: 'topic5/profile13.jpg' },
-    { id: 14, image: 'topic5/profile14.jpg' },
-    { id: 15, image: 'topic5/profile15.jpg' },
-    { id: 16, image: 'topic5/profile16.jpg' },
-    { id: 17, image: 'topic5/profile17.jpg' },
-    { id: 18, image: 'topic5/profile18.jpg' },
-  ]
-};
+    // Retrieve the selected topic from local storage
+    const selectedTopic = localStorage.getItem("selectedTopic") || "topic1";
 
-    //const selectedTopic = localStorage.getItem("selectedTopic") || "topic1";
+    // Map topic keys to descriptive display names
+    const topicDisplayNames = {
+      topic1: "Topic 1: Famous People",
+      topic2: "Topic 2: Cartoon Characters",
+      topic3: "Topic 3: Animals"
+    };
+
+    // Set the header to display the chosen topic's name
+    document.getElementById("topicTitle").textContent =
+      topicDisplayNames[selectedTopic] || selectedTopic;
+
+    // Define profiles for each topic (make sure your images are organized in topic folders)
+    const topicsData = {
+      topic1: [
+        { id: 1, image: 'topic1/profile1.jpg' },
+        { id: 2, image: 'topic1/profile2.jpg' },
+        { id: 3, image: 'topic1/profile3.jpg' },
+        { id: 4, image: 'topic1/profile4.jpg' }
+        // ... add more topic1 profiles as needed
+      ],
+      topic2: [
+        { id: 1, image: 'topic2/profile1.jpg' },
+        { id: 2, image: 'topic2/profile2.jpg' },
+        { id: 3, image: 'topic2/profile3.jpg' }
+        // ... add more topic2 profiles as needed
+      ],
+      topic3: [
+        { id: 1, image: 'topic3/profile1.jpg' },
+        { id: 2, image: 'topic3/profile2.jpg' },
+        { id: 3, image: 'topic3/profile3.jpg' }
+        // ... add more topic3 profiles as needed
+      ]
+    };
+
+    // Use the profiles for the selected topic
     const profiles = topicsData[selectedTopic] || [];
 
-
-
+    // Create and return a profile card element
     function createProfileCard(profile) {
       const card = document.createElement("div");
       card.classList.add("profile-card");
       card.setAttribute("data-id", profile.id);
       card.innerHTML = `
-        <img src="${profile.image}" alt="Card ${profile.id}" class="profile-img">
-        <p>Card ${profile.id}</p>
+        <img src="${profile.image}" alt="Profile ${profile.id}" class="profile-img">
+        <p>Profile ${profile.id}</p>
       `;
       card.addEventListener("click", flipProfile);
       return card;
     }
 
+    // Handle the flip action for a profile card
     function flipProfile(event) {
       const card = event.target.closest(".profile-card");
-      // Prevent clicking an already flipped card
       if (card.classList.contains("flipped")) return;
       card.classList.add("flipped");
       card.style.opacity = 0;
       checkEndGame();
     }
 
+    // Check if all but one profile have been flipped to trigger the end screen
     function checkEndGame() {
       const flippedCards = document.querySelectorAll(".profile-card.flipped");
       if (flippedCards.length === profiles.length - 1) {
-        // Show the end screen with animation
         document.getElementById("endScreen").classList.add("show");
       }
     }
 
+    // Restart the game (reset all flipped cards)
     function restartGame() {
       document.querySelectorAll(".profile-card").forEach(card => {
         card.classList.remove("flipped");
@@ -176,12 +111,13 @@
       document.getElementById("endScreen").classList.remove("show");
     }
 
+    // Return to the home page
     function goHome() {
       localStorage.removeItem("selectedTopic");
       window.location.href = "index.html";
     }
 
-    // Generate the game board
+    // Generate the game board by creating cards for each profile
     const gameBoard = document.getElementById("gameBoard");
     profiles.forEach(profile => {
       gameBoard.appendChild(createProfileCard(profile));
