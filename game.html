@@ -1,80 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guess Who - Game</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guess Who - Game</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="game-page">
-        <h1>Guess Who - Game</h1>
-        <p>Select a profile to start guessing!</p>
-        <div class="game-board" id="gameBoard">
-            <!-- Profiles will be dynamically loaded here -->
-        </div>
-
-        <div class="end-screen" id="endScreen" style="display: none;">
-            <h2>Congratulations! You've won!</h2>
-            <div class="celebration"></div>
-            <button onclick="restartGame()">Repeat</button>
-            <button onclick="goHome()">New Game</button>
-        </div>
+  <div class="game-page">
+    <h1>Guess Who - Game</h1>
+    <p>Select a profile to start guessing!</p>
+    <div class="game-board" id="gameBoard">
+      <!-- Profiles will be dynamically loaded here -->
     </div>
 
-    <script>
-        let selectedTopic = localStorage.getItem('selectedTopic');
-        const profiles = [
-            { id: 1, image: 'profile1.jpg' },
-            { id: 2, image: 'profile2.jpg' },
-            { id: 3, image: 'profile3.jpg' },
-            // Add more profiles as needed
-        ];
+    <div class="end-screen" id="endScreen" style="display: none;">
+      <h2>Congratulations! You've won!</h2>
+      <div class="celebration">🎉</div>
+      <button onclick="restartGame()">Repeat</button>
+      <button onclick="goHome()">New Game</button>
+    </div>
+  </div>
 
-        function createProfileCard(profile) {
-            const card = document.createElement('div');
-            card.classList.add('profile-card');
-            card.setAttribute('data-id', profile.id);
-            card.innerHTML = `
-                <img src="${profile.image}" alt="Profile ${profile.id}" class="profile-img">
-                <p>Profile ${profile.id}</p>
-            `;
-            card.addEventListener('click', flipProfile);
-            return card;
-        }
+  <script>
+    let selectedTopic = localStorage.getItem("selectedTopic");
+    const profiles = [
+      { id: 1, image: "profile1.jpg" },
+      { id: 2, image: "profile2.jpg" },
+      { id: 3, image: "profile3.jpg" },
+      // Add more profiles as needed
+    ];
 
-        function flipProfile(event) {
-            const card = event.target.closest('.profile-card');
-            card.classList.add('flipped');
-            card.style.opacity = 0;
-            checkEndGame();
-        }
+    function createProfileCard(profile) {
+      const card = document.createElement("div");
+      card.classList.add("profile-card");
+      card.setAttribute("data-id", profile.id);
+      card.innerHTML = `
+        <img src="${profile.image}" alt="Profile ${profile.id}" class="profile-img">
+        <p>Profile ${profile.id}</p>
+      `;
+      card.addEventListener("click", flipProfile);
+      return card;
+    }
 
-        function checkEndGame() {
-            const flippedCards = document.querySelectorAll('.profile-card.flipped');
-            if (flippedCards.length === profiles.length - 1) {
-                document.getElementById('endScreen').style.display = 'block';
-            }
-        }
+    function flipProfile(event) {
+      const card = event.target.closest(".profile-card");
+      card.classList.add("flipped");
+      card.style.opacity = 0;
+      checkEndGame();
+    }
 
-        function restartGame() {
-            document.querySelectorAll('.profile-card').forEach(card => {
-                card.classList.remove('flipped');
-                card.style.opacity = 1;
-            });
-            document.getElementById('endScreen').style.display = 'none';
-        }
+    function checkEndGame() {
+      const flippedCards = document.querySelectorAll(".profile-card.flipped");
+      if (flippedCards.length === profiles.length - 1) {
+        document.getElementById("endScreen").style.display = "block";
+      }
+    }
 
-        function goHome() {
-            localStorage.removeItem('selectedTopic');
-            window.location.href = "index.html";
-        }
+    function restartGame() {
+      document.querySelectorAll(".profile-card").forEach((card) => {
+        card.classList.remove("flipped");
+        card.style.opacity = 1;
+      });
+      document.getElementById("endScreen").style.display = "none";
+    }
 
-        // Generate game board
-        const gameBoard = document.getElementById('gameBoard');
-        profiles.forEach(profile => {
-            gameBoard.appendChild(createProfileCard(profile));
-        });
-    </script>
+    function goHome() {
+      localStorage.removeItem("selectedTopic");
+      window.location.href = "index.html";
+    }
+
+    // Generate game board
+    const gameBoard = document.getElementById("gameBoard");
+    profiles.forEach((profile) => {
+      gameBoard.appendChild(createProfileCard(profile));
+    });
+  </script>
 </body>
 </html>
