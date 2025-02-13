@@ -91,10 +91,12 @@ header p {
   transform: scale(1.03);
 }
 
-.profile-card .profile-img {
+/* Uniform size for profile images */
+.profile-img {
   width: 100%;
+  height: 200px;
+  object-fit: cover;
   display: block;
-  border-bottom: 1px solid #eee;
 }
 
 .profile-card p {
