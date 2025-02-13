@@ -143,8 +143,8 @@
       card.classList.add("profile-card");
       card.setAttribute("data-id", profile.id);
       card.innerHTML = `
-        <img src="${profile.image}" alt="Profile ${profile.id}" class="profile-img">
-        <p>Profile ${profile.id}</p>
+        <img src="${profile.image}" alt="Card ${profile.id}" class="profile-img">
+        <p>Card ${profile.id}</p>
       `;
       card.addEventListener("click", flipProfile);
       return card;
