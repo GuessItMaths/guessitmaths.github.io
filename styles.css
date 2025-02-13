@@ -8,7 +8,7 @@
 /* Global Styles */
 body {
   font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #e0bbf0, #d4c1d9);
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -185,4 +185,4 @@ header p {
   }
 }
 
-
+~
