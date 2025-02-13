@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guess Who - Select Topic</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guess Who - Select Topic</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="home-page">
-        <h1>Guess Who Game</h1>
-        <p>Select a Topic to Start</p>
-        <div class="topics">
-            <button onclick="startGame('topic1')">Topic 1</button>
-            <button onclick="startGame('topic2')">Topic 2</button>
-            <button onclick="startGame('topic3')">Topic 3</button>
-        </div>
+  <div class="home-page">
+    <h1>Guess Who Game</h1>
+    <p>Select a Topic to Start</p>
+    <div class="topics">
+      <button onclick="startGame('topic1')">Topic 1</button>
+      <button onclick="startGame('topic2')">Topic 2</button>
+      <button onclick="startGame('topic3')">Topic 3</button>
     </div>
+  </div>
 
-    <script>
-        function startGame(topic) {
-            localStorage.setItem('selectedTopic', topic);
-            window.location.href = "game.html";
-        }
-    </script>
+  <script>
+    function startGame(topic) {
+      localStorage.setItem("selectedTopic", topic);
+      window.location.href = "game.html";
+    }
+  </script>
 </body>
 </html>
