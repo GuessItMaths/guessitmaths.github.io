@@ -102,6 +102,7 @@ footer {
     padding: 10px 20px;
     background-color: #affaaf;
     color: #663399;
+    transition: background 0.3s ease, transform 0.3s ease;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 10px;
