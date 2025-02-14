@@ -29,15 +29,6 @@ body {
   flex: 1;
 }
 
-/* Footer Styles */
-footer {
-  background: #333;
-  color: #fff;
-  text-align: center;
-  padding: 15px;
-  margin-top: auto;
-}
-
 /* Header Styles */
 header {
   text-align: center;
@@ -75,6 +66,15 @@ header p {
 .topics button:hover {
   background: #ff5b4d;
   transform: translateY(-3px);
+}
+
+/* Footer Styles */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: auto;
 }
 
 /* Game Page Styles */
