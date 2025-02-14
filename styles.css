@@ -69,7 +69,7 @@ header p {
 /* Footer Styles */
 footer {
   background: #333;
-  color: #fff;
+  color: #663399;
   text-align: center;
   padding: 15px;
   margin-top: auto;
@@ -85,7 +85,7 @@ footer {
 
 .two-column-sections section {
     flex: 1; /* Each section takes up equal width */
-    background-color: #f8f8f8; /* Example background color */
+    background-color: #fff; /* Example background color */
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -100,7 +100,7 @@ footer {
 .two-column-sections a {
     display: inline-block; /* Make the link behave like a block element */
     padding: 10px 20px;
-    background-color: #2196f3;
+    background-color: #affaaf;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -108,7 +108,8 @@ footer {
 }
 
 .two-column-sections a:hover {
-    background-color: #1976d2;
+    background-color: #87fa87;
+    transform: translateY(-3px);
 }
 
 /* Responsive adjustments (optional) */
