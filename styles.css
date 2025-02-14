@@ -7,20 +7,19 @@
 
 /* Global Styles */
 body {
-  font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #eac5fc, #e3abff);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  color: #444;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #eac5fc, #e3abff);
+    display: flex;
+    flex-direction: column; /* Key change: Stack elements vertically */
+    min-height: 100vh;
+    color: #444;
 }
 
 /* Container for both pages */
 .container {
   width: 90%;
   max-width: 1100px;
-  margin: 20px;
+  margin: 20px auto;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
