@@ -56,7 +56,7 @@ header p {
   border: none;
   border-radius: 30px;
   background: #affaaf;
-  color: #fff;
+  color: #663399;
   transition: background 0.3s ease, transform 0.3s ease;
   cursor: pointer;
 }
@@ -69,7 +69,7 @@ header p {
 /* Footer Styles */
 footer {
   background: #333;
-  color: #663399;
+  color: #fff;
   text-align: center;
   padding: 15px;
   margin-top: auto;
