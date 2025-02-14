@@ -55,14 +55,14 @@ header p {
   font-size: 1em;
   border: none;
   border-radius: 30px;
-  background: #ff6f61;
+  background: #affaaf;
   color: #fff;
   transition: background 0.3s ease, transform 0.3s ease;
   cursor: pointer;
 }
 
 .topics button:hover {
-  background: #ff5b4d;
+  background: #87fa87;
   transform: translateY(-3px);
 }
 
