@@ -75,6 +75,50 @@ footer {
   margin-top: auto;
 }
 
+.two-column-sections {
+    display: flex;
+    flex-wrap: wrap; /* Important for responsiveness */
+    justify-content: center; /* Center the columns horizontally */
+    gap: 20px; /* Space between columns */
+    padding: 20px; /* Add padding around the sections */
+}
+
+.two-column-sections section {
+    flex: 1; /* Each section takes up equal width */
+    background-color: #f8f8f8; /* Example background color */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 300px; /* Minimum width to prevent collapsing on small screens */
+}
+
+.two-column-sections h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.two-column-sections a {
+    display: inline-block; /* Make the link behave like a block element */
+    padding: 10px 20px;
+    background-color: #2196f3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.two-column-sections a:hover {
+    background-color: #1976d2;
+}
+
+/* Responsive adjustments (optional) */
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+    .two-column-sections section {
+        flex: 1 1 100%; /* Each section takes full width on smaller screens */
+        min-width: auto;
+    }
+}
+
 /* Game Page Styles */
 .game-board {
   display: grid;
