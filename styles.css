@@ -122,7 +122,7 @@ footer {
 }
 
 hr {
-    height: 1.5px; /* Adjust the height for thickness */
+    height: 0.7px; /* Adjust the height for thickness */
     opacity: 0; /* 0% opacity makes the line completely invisible */
     /* Other styling properties as needed */
     margin: 20px auto; /* Example margin */
