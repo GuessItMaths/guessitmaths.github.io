@@ -59,24 +59,35 @@
         .topic-links {
             list-style: none;
             padding: 0;
+            display: flex; /* Enable flexbox for columns */
+            flex-wrap: wrap; /* Allow wrapping to new rows */
+            gap: 10px; /* Adjust spacing between links */
         }
 
         .topic-links li {
-            margin-bottom: 10px;
+            flex: 1 0 calc(50% - 10px); /* Two columns with spacing */
+            min-width: 200px; /* Minimum width for each link */
+            margin-bottom: 0; /* Remove default margin */
         }
 
         .topic-links a {
             color: #2196f3;
             text-decoration: none;
+            display: block; /* Make the link take full width of its container */
+            padding: 5px 10px; /* Add some padding to the links */
+            border-radius: 5px; /* Add some rounded corners (optional) */
+            background-color: #f0f0f0; /* Example background color */
+            transition: background-color 0.3s; /* Smooth hover effect */
         }
 
         .topic-links a:hover {
-            text-decoration: underline;
+            text-decoration: none; /* Remove underline on hover if needed */
+            background-color: #e0e0e0;
         }
 
         /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .guidance-column {
+        @media (max-width: 600px) { /* Adjust breakpoint as needed */
+            .topic-links li {
                 flex: 1 1 100%; /* Full width on smaller screens */
                 min-width: auto;
             }
@@ -102,13 +113,16 @@
 
         <div class="guidance-column">
             <div class="guidance-section">
-                <h2>Topic - Prompts & Scaffolds</h2>
-                <ul class="topic-links">
-                    <li><a href="#">Topic 1 - Prompt & Scaffold</a></li>
-                    <li><a href="#">Topic 2 - Prompt & Scaffold</a></li>
-                    <li><a href="#">Topic 3 - Prompt & Scaffold</a></li>
-                    </ul>
-            </div>
+        <h2>Topic - Prompts & Scaffolds</h2>
+        <ul class="topic-links">
+            <li><a href="#">Topic 1 - Prompt & Scaffold</a></li>
+            <li><a href="#">Topic 2 - Prompt & Scaffold</a></li>
+            <li><a href="#">Topic 3 - Prompt & Scaffold</a></li>
+            <li><a href="#">Topic 4 - Prompt & Scaffold</a></li>
+            <li><a href="#">Topic 5 - Prompt & Scaffold</a></li>
+            <li><a href="#">Topic 6 - Prompt & Scaffold</a></li>
+            </ul>
+    </div>
 
             <div class="guidance-section">
                 <h2>Future Projects & Topics</h2>
