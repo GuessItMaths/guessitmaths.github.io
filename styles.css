@@ -209,10 +209,24 @@ footer {
 
 /* Celebration Animation */
 .celebration {
-  font-size: 50px;
-  animation: pop 1.5s ease-in-out infinite;
-  margin: 20px 0;
+    font-size: 50px;
+    animation: pop 1.5s ease-in-out infinite;
+    /* Key changes for positioning: */
+    position: fixed; /* Take it out of the document flow */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    width: 100%; /* Make it span the entire width */
+    text-align: center; /* Center the text */
+    z-index: 1000; /* Ensure it's on top of other content */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background (optional) */
+    color: white; /* Example text color */
+    padding: 20px; /* Add some padding */
 }
+
+@keyframes pop {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); } /* Include translate here as well */
+    50% { transform: translate(-50%, -50%) scale(1.3); } /* Include translate here as well */
 
 @keyframes pop {
   0%, 100% { transform: scale(1); }
