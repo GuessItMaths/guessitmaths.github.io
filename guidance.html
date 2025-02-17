@@ -1,39 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Guidance - Guess Who Game</title>
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Google Fonts for consistency -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guidance for Teachers</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles specific to guidance.html */
+        .guidance-container {
+            display: flex;
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .guidance-column {
+            flex: 1; /* Equal width columns */
+            min-width: 300px; /* Minimum width for each column */
+        }
+
+        .guidance-section {
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px; /* Space between sections */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .guidance-section h2 {
+          margin-bottom: 10px;
+        }
+
+        .back-link {
+            position: absolute; /* Position it absolutely */
+            top: 20px;
+            left: 20px;
+            background-color: #2196f3;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 20px; /* Make it a bubble */
+            transition: background-color 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #1976d2;
+        }
+
+        .topic-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .topic-links li {
+            margin-bottom: 10px;
+        }
+
+        .topic-links a {
+            color: #2196f3;
+            text-decoration: none;
+        }
+
+        .topic-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .guidance-column {
+                flex: 1 1 100%; /* Full width on smaller screens */
+                min-width: auto;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container guidance-page">
-    <header>
-      <h1>Guidance</h1>
-    </header>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Back</a></li>
-      </ul>
-    </nav>
-    <main>
-      <section class="content">
-        <h2>How to Play</h2>
-        <p>Welcome to the Guess Who Game! Follow these steps to start playing:</p>
-        <ol>
-          <li>Select a topic from the home page.</li>
-          <li>On the game page, a board with profile cards will appear.</li>
-          <li>Click on a profile card to flip it over.</li>
-          <li>Continue flipping until only one card remains unflipped.</li>
-          <li>Use your deduction skills to identify the mystery profile.</li>
-        </ol>
-        <p>If you have any questions, please feel free to contact our support team.</p>
-      </section>
-    </main>
-  </div>
+    <a href="index.html" class="back-link">Back</a>
+
+    <div class="guidance-container">
+        <div class="guidance-column">
+            <div class="guidance-section">
+                <h2>How to Play & Ideas</h2>
+                <p>Explain the rules of the game here.  Give suggestions for variations, educational applications, and general ideas for teachers to use in the classroom.</p>
+                <p>Example:</p>
+                <ul>
+                    <li>Start by explaining the concept of elimination.</li>
+                    <li>Demonstrate how to ask effective yes/no questions.</li>
+                    <li>... more ideas ...</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="guidance-column">
+            <div class="guidance-section">
+                <h2>Topic - Prompts & Scaffolds</h2>
+                <ul class="topic-links">
+                    <li><a href="#">Topic 1 - Prompt & Scaffold</a></li>
+                    <li><a href="#">Topic 2 - Prompt & Scaffold</a></li>
+                    <li><a href="#">Topic 3 - Prompt & Scaffold</a></li>
+                    </ul>
+            </div>
+
+            <div class="guidance-section">
+                <h2>Future Projects & Topics</h2>
+                <p>List upcoming topics, projects, or features that teachers can look forward to. This can generate excitement and anticipation.</p>
+                <p>Example:</p>
+                <ul>
+                    <li>New Topic: Fractions</li>
+                    <li>Interactive Online Version</li>
+                    <li>... more future plans ...</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
