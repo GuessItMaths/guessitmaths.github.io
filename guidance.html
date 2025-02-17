@@ -7,11 +7,19 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Styles specific to guidance.html */
+        body { /* Ensure body takes up full viewport height for proper positioning */
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            min-height: 100vh;
+        }
+
         .guidance-container {
             display: flex;
             flex-wrap: wrap; /* Allows wrapping on smaller screens */
             gap: 20px;
             padding: 20px;
+            margin-top: 60px; /* Add top margin to prevent overlap */
+            flex: 1; /* Allows the content to expand and fill available space */
         }
 
         .guidance-column {
@@ -26,8 +34,9 @@
             margin-bottom: 20px; /* Space between sections */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         .guidance-section h2 {
-          margin-bottom: 10px;
+            margin-bottom: 10px;
         }
 
         .back-link {
@@ -40,6 +49,7 @@
             text-decoration: none;
             border-radius: 20px; /* Make it a bubble */
             transition: background-color 0.3s;
+            z-index: 10; /* Ensure the back link is above the content */
         }
 
         .back-link:hover {
