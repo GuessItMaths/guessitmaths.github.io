@@ -125,7 +125,7 @@ hr {
     height: 0.3px; /* Adjust the height for thickness */
     opacity: 0; /* 0% opacity makes the line completely invisible */
     /* Other styling properties as needed */
-    margin: 20px auto; /* Example margin */
+    margin: 5px auto; /* Example margin */
     width: 80%; /* Example width */
     background-color: transparent; /* Makes background transparent */
     border: none; /* Removes any default border */
