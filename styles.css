@@ -149,6 +149,11 @@ hr {
             transform: translateY(-3px);
         }
 
+ul {
+  list-style-type: circle; /* Hollow circle */
+  list-style-position: inside;
+}
+
 /* Game Page Styles */
 .game-board {
     display: grid;
