@@ -131,6 +131,24 @@ hr {
     border: none; /* Removes any default border */
 }
 
+.back-link {
+            position: absolute; /* Position it absolutely */
+            top: 20px;
+            left: 20px;
+            background-color: #2196f3;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 20px; /* Make it a bubble */
+            transition: background-color 0.3s;
+            z-index: 10; /* Ensure the back link is above the content */
+        }
+
+        .back-link:hover {
+            background-color: #1976d2
+            transform: translateY(-3px);
+        }
+
 /* Game Page Styles */
 .game-board {
     display: grid;
